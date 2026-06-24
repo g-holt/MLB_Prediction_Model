@@ -1,9 +1,5 @@
 
----
 
-# `docs/verification_contract.md`
-
-```markdown
 # Verification Contract
 
 This project must follow a strict verification-first workflow.
@@ -174,7 +170,7 @@ Avoid script sprawl.
 
 Do not create repeated files such as:
 
-```text
+
 collector_v1.py
 collector_v2.py
 collector_final.py
