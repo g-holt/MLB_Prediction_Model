@@ -30,7 +30,7 @@ Betting and wallet logic must come last. Prediction quality and data integrity m
 
 ## Model lanes
 
-The project will eventually maintain three separate model lanes:
+The project will eventually maintain three separate model lanes.
 
 ### Live model
 
@@ -93,3 +93,20 @@ collector_v1.py
 collector_v2.py
 collector_final.py
 collector_final_fixed.py
+```
+
+Instead, code history should live in Git commits and pull requests.
+
+Run outputs should live in organized run folders and manifests, not in copied script folders.
+
+## Current status
+
+Planning only.
+
+No source contracts, schemas, command-line interfaces, collectors, feature builders, model logic, or wallet logic are locked yet.
+
+See:
+
+- `docs/verification_contract.md`
+- `docs/project_list.md`
+- `docs/source_capability_matrix.md`
