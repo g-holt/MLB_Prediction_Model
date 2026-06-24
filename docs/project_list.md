@@ -35,51 +35,57 @@ Completed items should be shown with strikethrough instead of being deleted, so 
 
 ### 0C — Source capability matrix
 
-- Create source capability matrix.
-- List candidate sources for each data category.
+- ~~Create source capability matrix.~~
+- ~~List candidate sources for each data category.~~
 - Prove whether each source supports historical data.
 - Prove whether each source supports as-of or timestamped data.
 - Prove whether data can be derived from prior games only.
 - Prove login/API requirements.
 - Prove raw export format.
 - Identify leakage risk.
-- Define required proof artifact for each source.
-- Mark source status as unproven, proven-safe, proven-unsafe, fallback, or final-truth-only.
+- ~~Define required proof artifact for each source.~~
+- ~~Mark initial source status as unproven, proven-safe, proven-unsafe, fallback, final-truth-only, or excluded.~~
 
 ### 0D — Candidate source categories
 
-- Game schedule and canonical game IDs.
-- Odds snapshots.
-- Starting pitchers.
-- Confirmed/probable lineups.
-- Team batting stats.
-- Player batting stats.
-- Starting pitcher stats.
-- Bullpen usage.
-- Team defense.
-- Park factors.
-- Weather.
-- Injuries/roster status.
-- Final scores for grading only.
+- ~~Game schedule and canonical game IDs.~~
+- ~~Odds snapshots.~~
+- ~~Starting pitchers.~~
+- ~~Confirmed/probable lineups.~~
+- ~~Team batting stats.~~
+- ~~Player batting stats.~~
+- ~~Starting pitcher stats.~~
+- ~~Bullpen usage.~~
+- ~~Team defense.~~
+- ~~Park factors.~~
+- ~~Weather.~~
+- ~~Injuries/roster status.~~
+- ~~Final scores for grading only.~~
 
 ### 0E — Programming language, environment, and repository strategy
 
-- Decide primary programming language.
-- Decide Python version after dependency compatibility audit.
-- Decide package/dependency manager.
-- Decide local run shell.
+- ~~Decide primary programming language: Python.~~
+- ~~Decide Python version after dependency compatibility audit: Python 3.14.6 is accepted for the starter stack.~~
+- ~~Decide package/dependency manager: uv.~~
+- ~~Decide local run shell: Windows PowerShell.~~
 - Decide project packaging format.
-- Decide testing framework.
-- Decide formatter/linter.
+- ~~Decide testing framework: pytest.~~
+- ~~Decide formatter/linter: ruff.~~
 - Decide Git/GitHub workflow.
 - Design clean project structure to avoid script/folder sprawl.
-- Define rule: code history lives in Git, not copied script versions.
-- Define rule: run outputs live in run folders/manifests, not script iteration folders.
-- Verify local Python version.
-- Verify local Git version.
-- Verify local uv availability.
-- Verify PowerShell version.
-- Verify PowerShell execution policy.
+- ~~Define rule: code history lives in Git, not copied script versions.~~
+- ~~Define rule: run outputs live in run folders/manifests, not script iteration folders.~~
+- ~~Verify local Python version.~~
+- ~~Verify local Git version.~~
+- ~~Verify local uv availability.~~
+- ~~Verify PowerShell version.~~
+- ~~Verify PowerShell execution policy.~~
+- ~~Verify local repository clone path.~~
+- ~~Verify local repository working tree is clean.~~
+- ~~Verify accidental local `doc` folder is absent.~~
+- ~~Verify Python 3.14 starter dependency install compatibility.~~
+- ~~Verify Python 3.14 starter dependency import compatibility.~~
+- ~~Verify `uv pip check` compatibility.~~
 
 ### 0F — GitHub repository setup
 
@@ -88,8 +94,12 @@ Completed items should be shown with strikethrough instead of being deleted, so 
 - ~~Confirm access to `g-holt/MLB_Prediction_Model`.~~
 - ~~Confirm repository default branch is `main`.~~
 - ~~Confirm repository permissions include admin, maintain, pull, push, and triage.~~
-- Create initial documentation commit manually if connector write actions remain blocked.
-- Verify committed documentation files from repository contents.
+- ~~Create initial documentation commit manually if connector write actions remain blocked.~~
+- ~~Repair scaffold through connector once write path became available.~~
+- ~~Verify committed documentation files from repository contents.~~
+- ~~Clone repository locally.~~
+- ~~Verify local clone tracks `origin/main`.~~
+- ~~Verify no accidental local `doc` folder exists.~~
 - Decide branch strategy.
 - Decide whether direct commits to `main` are allowed after initial scaffold.
 - Decide whether all future changes require pull requests.
@@ -537,4 +547,4 @@ Completed items should be shown with strikethrough instead of being deleted, so 
 
 - No source interface has been proven yet for this new project.
 - No final schema, CLI, folder contract, or model feature list is locked yet.
-- No phase beyond planning has passed implementation acceptance gates yet.
+- No phase beyond planning/environment setup has passed implementation acceptance gates yet.
