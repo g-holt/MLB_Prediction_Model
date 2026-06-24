@@ -1,9 +1,5 @@
 
----
 
-# `docs/project_list.md`
-
-```markdown
 # MLB Prediction / Backtesting Project List
 
 This list is the active project roadmap.
