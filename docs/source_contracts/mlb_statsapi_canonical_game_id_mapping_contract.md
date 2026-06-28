@@ -1,6 +1,6 @@
 # MLB Stats API Canonical Game ID Mapping Contract
 
-Status: draft contract, not implementation acceptance.
+Status: draft contract with initial implementation tests accepted; not production source acceptance.
 
 Purpose:
 
@@ -48,11 +48,10 @@ Acceptance gates:
 - The canonical identity output must not contain denied score/final-truth fields.
 - Duplicate canonical_game_id values within one generated game index must fail validation.
 - Missing required identity fields must produce a blocked/degraded reason instead of inferred IDs.
-- The source capability matrix must remain UNPROVEN until implementation tests pass, as-of timestamp behavior is accepted, and downstream source crosswalk behavior is separately accepted where needed.
+- The source capability matrix must remain UNPROVEN until issued/as-of timestamp behavior is accepted and downstream source crosswalk behavior is separately accepted where needed.
 
 Not accepted yet:
 
-- implementation code
 - production source status
 - issued/as-of timestamp behavior
 - cross-source mapping to FanGraphs, Baseball Savant, Odds API, Retrosheet, or other sources
