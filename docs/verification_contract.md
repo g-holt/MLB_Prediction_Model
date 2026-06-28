@@ -85,3 +85,11 @@ Do not commit secrets, API keys, tokens, browser sessions, local credentials, or
 No implementation code is currently accepted.
 
 No schemas, command-line arguments, package layout, model features, or source contracts are locked yet.
+
+## Assistant operating contract
+
+Before answering project-control requests, the assistant must check docs/assistant_operating_contract.md and the relevant project document instead of relying on memory.
+
+Project-control requests include List, next step, current phase, status, command blocks, PRs, source status, acceptance gates, workflow order, and project constraints.
+
+If the assistant cannot check the required file, it must say so and must not proceed as if it verified the answer.
