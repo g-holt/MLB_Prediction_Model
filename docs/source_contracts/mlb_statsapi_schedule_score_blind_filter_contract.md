@@ -1,6 +1,6 @@
 # MLB Stats API Schedule Score-Blind Filter Contract
 
-Status: draft contract, not implementation acceptance.
+Status: draft contract with initial implementation tests accepted; not production source acceptance.
 
 Purpose:
 
@@ -68,12 +68,10 @@ Acceptance gates:
 - The filtered output must contain every required allowed field when present in raw input.
 - The filtered output must contain none of the denied raw fields.
 - The filtered output must be valid JSON-serializable data.
-- The source capability matrix must remain UNPROVEN until implementation tests pass and an ID mapping contract is accepted.
+- The source capability matrix must remain UNPROVEN until issued/as-of timestamp behavior is accepted and all remaining source gates pass.
 
 Not accepted yet:
 
 - production source status
-- implementation code
 - packet schema
 - issued/as-of timestamp behavior
-- canonical game ID mapping contract
