@@ -1,0 +1,108 @@
+{
+    "audit_started_at_local":  "2026-06-27T20:40:33.9561674-05:00",
+    "source_name":  "MLB Stats API schedule endpoint",
+    "source_url":  "https://statsapi.mlb.com/api/v1/schedule?sportId=1\u0026date=2024-04-01\u0026hydrate=probablePitcher",
+    "audit_date":  "2024-04-01",
+    "top_level_keys":  [
+                           "copyright",
+                           "totalItems",
+                           "totalEvents",
+                           "totalGames",
+                           "totalGamesInProgress",
+                           "dates"
+                       ],
+    "date_count":  1,
+    "game_count":  14,
+    "score_fields_present_any":  true,
+    "probable_pitcher_present_any":  true,
+    "first_game":  {
+                       "gamePk":  746817,
+                       "gameGuid":  "414cf698-76f8-4572-80fd-085f7d5e4b9f",
+                       "link":  "/api/v1.1/game/746817/feed/live",
+                       "gameType":  "R",
+                       "season":  "2024",
+                       "gameDate":  "2024-04-01T18:10:00Z",
+                       "officialDate":  "2024-04-01",
+                       "status":  {
+                                      "abstractGameState":  "Final",
+                                      "codedGameState":  "F",
+                                      "detailedState":  "Completed Early",
+                                      "statusCode":  "FR",
+                                      "startTimeTBD":  false,
+                                      "reason":  "Rain",
+                                      "abstractGameCode":  "F"
+                                  },
+                       "teams":  {
+                                     "away":  {
+                                                  "team":  {
+                                                               "id":  144,
+                                                               "name":  "Atlanta Braves",
+                                                               "link":  "/api/v1/teams/144"
+                                                           },
+                                                  "leagueRecord":  {
+                                                                       "wins":  3,
+                                                                       "losses":  1,
+                                                                       "ties":  0,
+                                                                       "pct":  ".750"
+                                                                   },
+                                                  "score":  9,
+                                                  "isWinner":  true,
+                                                  "probablePitcher":  {
+                                                                          "id":  450203,
+                                                                          "fullName":  "Charlie Morton",
+                                                                          "link":  "/api/v1/people/450203"
+                                                                      },
+                                                  "splitSquad":  false,
+                                                  "seriesNumber":  2
+                                              },
+                                     "home":  {
+                                                  "team":  {
+                                                               "id":  145,
+                                                               "name":  "Chicago White Sox",
+                                                               "link":  "/api/v1/teams/145"
+                                                           },
+                                                  "leagueRecord":  {
+                                                                       "wins":  0,
+                                                                       "losses":  4,
+                                                                       "ties":  0,
+                                                                       "pct":  ".000"
+                                                                   },
+                                                  "score":  0,
+                                                  "isWinner":  false,
+                                                  "probablePitcher":  {
+                                                                          "id":  623167,
+                                                                          "fullName":  "Chris Flexen",
+                                                                          "link":  "/api/v1/people/623167"
+                                                                      },
+                                                  "splitSquad":  false,
+                                                  "seriesNumber":  2
+                                              }
+                                 },
+                       "venue":  {
+                                     "id":  4,
+                                     "name":  "Guaranteed Rate Field",
+                                     "link":  "/api/v1/venues/4"
+                                 },
+                       "content":  {
+                                       "link":  "/api/v1/game/746817/content"
+                                   },
+                       "isTie":  false,
+                       "gameNumber":  1,
+                       "publicFacing":  true,
+                       "doubleHeader":  "N",
+                       "gamedayType":  "P",
+                       "tiebreaker":  "N",
+                       "calendarEventID":  "14-746817-2024-04-01",
+                       "seasonDisplay":  "2024",
+                       "dayNight":  "day",
+                       "scheduledInnings":  9,
+                       "reverseHomeAwayStatus":  false,
+                       "inningBreakLength":  120,
+                       "gamesInSeries":  2,
+                       "seriesGameNumber":  1,
+                       "seriesDescription":  "Regular Season",
+                       "recordSource":  "S",
+                       "ifNecessary":  "N",
+                       "ifNecessaryDescription":  "Normal Game"
+                   }
+}
