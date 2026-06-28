@@ -1,4 +1,4 @@
-﻿# MLB Stats API Canonical Game ID Mapping Contract
+# MLB Stats API Canonical Game ID Mapping Contract
 
 Status: draft contract, not implementation acceptance.
 
