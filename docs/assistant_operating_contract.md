@@ -1,4 +1,4 @@
-﻿# Assistant Operating Contract
+# Assistant Operating Contract
 
 Status: required project-control behavior.
 
