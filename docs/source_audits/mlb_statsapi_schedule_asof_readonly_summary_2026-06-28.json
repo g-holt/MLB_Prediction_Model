@@ -1,0 +1,135 @@
+{
+  "cases": [
+    {
+      "date": "2024-04-01",
+      "date_count": 1,
+      "game_count": 14,
+      "http_status_code": 200,
+      "json_timestamp_like_fields_first_three_list_items": [
+        {
+          "path": "copyright",
+          "value": "Copyright 2026 MLB Advanced Media, L.P.  Use of any content on this page acknowledges agreement to the terms posted here http://gdx.mlb.com/components/copyright.txt"
+        },
+        {
+          "path": "dates",
+          "value_type": "list"
+        },
+        {
+          "path": "dates[0].date",
+          "value": "2024-04-01"
+        },
+        {
+          "path": "dates[0].games[0].gameDate",
+          "value": "2024-04-01T18:10:00Z"
+        },
+        {
+          "path": "dates[0].games[0].officialDate",
+          "value": "2024-04-01"
+        },
+        {
+          "path": "dates[0].games[0].status.startTimeTBD",
+          "value": false
+        },
+        {
+          "path": "dates[0].games[1].gameDate",
+          "value": "2024-04-01T18:20:00Z"
+        },
+        {
+          "path": "dates[0].games[1].officialDate",
+          "value": "2024-04-01"
+        },
+        {
+          "path": "dates[0].games[1].status.startTimeTBD",
+          "value": false
+        },
+        {
+          "path": "dates[0].games[2].gameDate",
+          "value": "2024-04-01T20:05:00Z"
+        },
+        {
+          "path": "dates[0].games[2].officialDate",
+          "value": "2024-04-01"
+        },
+        {
+          "path": "dates[0].games[2].status.startTimeTBD",
+          "value": false
+        }
+      ],
+      "label": "historical_completed",
+      "raw_payload_path": "tmp_source_audits\\mlb_statsapi_schedule_asof_historical_completed_2024-04-01.json",
+      "response_headers_selected": {
+        "age": "0",
+        "cache-control": "max-age=20, public, stale-while-revalidate=30, stale-if-error=86400",
+        "date": "Sun, 28 Jun 2026 22:15:45 GMT",
+        "x-cache": "MISS, MISS"
+      },
+      "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2024-04-01&hydrate=probablePitcher"
+    },
+    {
+      "date": "2026-07-01",
+      "date_count": 1,
+      "game_count": 14,
+      "http_status_code": 200,
+      "json_timestamp_like_fields_first_three_list_items": [
+        {
+          "path": "copyright",
+          "value": "Copyright 2026 MLB Advanced Media, L.P.  Use of any content on this page acknowledges agreement to the terms posted here http://gdx.mlb.com/components/copyright.txt"
+        },
+        {
+          "path": "dates",
+          "value_type": "list"
+        },
+        {
+          "path": "dates[0].date",
+          "value": "2026-07-01"
+        },
+        {
+          "path": "dates[0].games[0].gameDate",
+          "value": "2026-07-01T16:35:00Z"
+        },
+        {
+          "path": "dates[0].games[0].officialDate",
+          "value": "2026-07-01"
+        },
+        {
+          "path": "dates[0].games[0].status.startTimeTBD",
+          "value": false
+        },
+        {
+          "path": "dates[0].games[1].gameDate",
+          "value": "2026-07-01T17:10:00Z"
+        },
+        {
+          "path": "dates[0].games[1].officialDate",
+          "value": "2026-07-01"
+        },
+        {
+          "path": "dates[0].games[1].status.startTimeTBD",
+          "value": false
+        },
+        {
+          "path": "dates[0].games[2].gameDate",
+          "value": "2026-07-01T17:35:00Z"
+        },
+        {
+          "path": "dates[0].games[2].officialDate",
+          "value": "2026-07-01"
+        },
+        {
+          "path": "dates[0].games[2].status.startTimeTBD",
+          "value": false
+        }
+      ],
+      "label": "future_schedule",
+      "raw_payload_path": "tmp_source_audits\\mlb_statsapi_schedule_asof_future_schedule_2026-07-01.json",
+      "response_headers_selected": {
+        "age": "22",
+        "cache-control": "max-age=20, public, stale-while-revalidate=30, stale-if-error=86400",
+        "date": "Sun, 28 Jun 2026 22:15:45 GMT",
+        "x-cache": "HIT, MISS"
+      },
+      "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-07-01&hydrate=probablePitcher"
+    }
+  ],
+  "run_started_utc": "2026-06-28T22:15:42.347456+00:00"
+}
