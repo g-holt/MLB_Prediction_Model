@@ -93,3 +93,5 @@ desktop.ini
 
 # Keep documentation and small sample fixtures allowed.
 # Do not commit private source data, API responses, odds files, browser sessions, or final-score grading outputs unless explicitly accepted as tiny sanitized fixtures.
+
+tmp_source_audits/
