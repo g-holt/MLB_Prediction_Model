@@ -1,6 +1,6 @@
 # As-Of Snapshot Manifest Contract
 
-Status: draft contract, not implementation acceptance.
+Status: draft contract with initial implementation tests accepted; not production source acceptance.
 
 Purpose:
 
@@ -49,11 +49,10 @@ Acceptance gates:
 - source_issued_asof_proven true must fail validation when source_issued_asof_utc is null.
 - source_issued_asof_utc must not be populated from collector timestamps or generic HTTP cache headers.
 - raw_payload_sha256 must match the referenced raw payload bytes.
-- The source capability matrix must remain UNPROVEN until implementation tests and source-specific acceptance gates pass.
+- The source capability matrix must remain UNPROVEN until source-specific acceptance gates pass.
 
 Not accepted yet:
 
-- implementation code
 - production source status
 - source-issued as-of timestamp behavior for MLB Stats API schedule
 - packet schema
