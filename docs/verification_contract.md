@@ -82,9 +82,11 @@ Do not commit secrets, API keys, tokens, browser sessions, local credentials, or
 
 ## Current implementation status
 
-No implementation code is currently accepted.
+Some Phase 0C implementation helpers are accepted on `main` only after passing tests, ruff, pull request review, and merge verification.
 
-No schemas, command-line arguments, package layout, model features, or source contracts are locked yet.
+Accepted helper code does not by itself prove production source status, packet schema, command-line arguments, model features, or betting/wallet behavior.
+
+Schemas, command-line arguments, package layout, model features, and source production status remain unaccepted unless an active contract or source matrix row says otherwise.
 
 ## Assistant operating contract
 
