@@ -49,7 +49,7 @@ A snapshot is eligible only when all of the following are true:
 - the target game_date_utc is strictly after configured_asof_cutoff_utc;
 - source_issued_asof_utc remains null;
 - source_issued_asof_proven remains false;
-- response_http_status is successful;
+- response_http_status is an integer from 200 through 299 inclusive;
 - raw_payload_sha256 matches the stored payload bytes;
 - score_blind_filter_required is true;
 - the derived record is newly constructed through the accepted score-blind and canonical identity helpers.
@@ -61,6 +61,7 @@ Collector timestamps must never be relabeled as source-issued timestamps. A curr
 The record must block or fail when:
 
 - the snapshot was received after the configured cutoff;
+- response_http_status is missing, is not an integer, or is outside 200 through 299;
 - game_date_utc is missing, invalid, or not strictly later than the cutoff;
 - game_pk is missing;
 - duplicate canonical game IDs are present;
@@ -79,10 +80,11 @@ Before this fallback can receive source-specific acceptance:
 4. Missing game_pk must block.
 5. Duplicate canonical game IDs must fail.
 6. Payload hash mismatch must fail.
-7. source_issued_asof_utc must remain null and source_issued_asof_proven must remain false.
-8. Derived output must match the canonical identity allowlist exactly.
-9. A postgame historical retrieval must fail as a pregame snapshot even after score-blind filtering.
-10. Replaying the same stored payload and manifest must produce deterministic canonical identity output.
+7. A missing, non-integer, or non-2xx response_http_status must fail.
+8. source_issued_asof_utc must remain null and source_issued_asof_proven must remain false.
+9. Derived output must match the canonical identity allowlist exactly.
+10. A postgame historical retrieval must fail as a pregame snapshot even after score-blind filtering.
+11. Replaying the same stored payload and manifest must produce deterministic canonical identity output.
 
 ## Status effect
 
