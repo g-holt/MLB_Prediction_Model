@@ -36,3 +36,11 @@ For code and workflow commands:
 - banner only inside the code block;
 - prove facts from repo, docs, logs, or artifacts;
 - keep statuses UNPROVEN until acceptance gates pass.
+
+## Command delivery self-check
+
+Before presenting a PowerShell command block, verify that it contains no here-string tokens, no line-continuation backticks, no PowerShell multiline constructs, and no exit command unless explicitly requested.
+
+When a generated script body is required, write it through a repository file, a compact Python command, or another contract-compliant method instead of embedding a PowerShell here-string.
+
+If a proposed command violates these constraints, do not present it; rewrite it first.
