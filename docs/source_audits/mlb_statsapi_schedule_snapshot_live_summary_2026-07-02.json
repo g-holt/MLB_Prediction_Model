@@ -1,0 +1,27 @@
+{
+  "acceptance_status": "UNPROVEN",
+  "collector_observed_asof_utc": "2026-07-02T03:20:50.426194Z",
+  "conclusion": "live collector wrote and validated raw payload plus manifest; source-issued as-of timestamp behavior remains unproven",
+  "manifest_path": "tmp_source_audits/mlb_statsapi_schedule_snapshot_live_20260702/mlb_statsapi_schedule_2026-07-01_manifest.json",
+  "raw_payload_path": "tmp_source_audits/mlb_statsapi_schedule_snapshot_live_20260702/mlb_statsapi_schedule_2026-07-01_raw.json",
+  "raw_payload_sha256": "56bd4f8a43416765d3d011c8eeca5fe113c769e43af4df2e7061efa2a3e8ff02",
+  "request_params": {
+    "date": "2026-07-01",
+    "hydrate": "probablePitcher",
+    "sportId": 1
+  },
+  "requested_at_utc": "2026-07-02T03:20:50.112098Z",
+  "response_headers_selected": {
+    "age": "15",
+    "cache-control": "max-age=20, public, stale-while-revalidate=30, stale-if-error=86400",
+    "date": "Thu, 02 Jul 2026 03:20:52 GMT",
+    "x-cache": "HIT, MISS"
+  },
+  "response_http_status": 200,
+  "response_received_at_utc": "2026-07-02T03:20:50.426194Z",
+  "source_issued_asof_proven": false,
+  "source_issued_asof_utc": null,
+  "source_name": "MLB Stats API schedule endpoint",
+  "source_url": "https://statsapi.mlb.com/api/v1/schedule",
+  "status": "evidence_artifact_not_source_acceptance"
+}
