@@ -1,0 +1,290 @@
+{
+  "cases": [
+    {
+      "conditional_request_attempted": false,
+      "date_count": 1,
+      "game_count_first_date": 14,
+      "get_headers_selected": {
+        "age": "0",
+        "cache-control": "max-age=20, public, stale-while-revalidate=30, stale-if-error=86400",
+        "date": "Thu, 02 Jul 2026 19:36:19 GMT",
+        "vary": "accept-encoding, Accept-Encoding",
+        "x-cache": "MISS, MISS"
+      },
+      "get_status_code": 200,
+      "get_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2024-04-01&hydrate=probablePitcher",
+      "head_headers_selected": {
+        "age": "0",
+        "cache-control": "max-age=20, public, stale-while-revalidate=30, stale-if-error=86400",
+        "date": "Thu, 02 Jul 2026 19:36:19 GMT",
+        "vary": "accept-encoding, Accept-Encoding",
+        "x-cache": "MISS, HIT"
+      },
+      "head_status_code": 200,
+      "json_parse_ok": true,
+      "label": "historical_completed",
+      "params": {
+        "date": "2024-04-01",
+        "hydrate": "probablePitcher",
+        "sportId": 1
+      },
+      "timestamp_like_fields_first_twenty": [
+        {
+          "path": "dates",
+          "value_type": "list"
+        },
+        {
+          "path": "dates[0].date",
+          "value": "2024-04-01"
+        },
+        {
+          "path": "dates[0].games[0].gameDate",
+          "value": "2024-04-01T18:10:00Z"
+        },
+        {
+          "path": "dates[0].games[0].officialDate",
+          "value": "2024-04-01"
+        },
+        {
+          "path": "dates[0].games[0].status.startTimeTBD",
+          "value": false
+        },
+        {
+          "path": "dates[0].games[1].gameDate",
+          "value": "2024-04-01T18:20:00Z"
+        },
+        {
+          "path": "dates[0].games[1].officialDate",
+          "value": "2024-04-01"
+        },
+        {
+          "path": "dates[0].games[1].status.startTimeTBD",
+          "value": false
+        }
+      ],
+      "top_level_keys": [
+        "copyright",
+        "dates",
+        "totalEvents",
+        "totalGames",
+        "totalGamesInProgress",
+        "totalItems"
+      ]
+    },
+    {
+      "conditional_request_attempted": false,
+      "date_count": 1,
+      "game_count_first_date": 14,
+      "get_headers_selected": {
+        "age": "24",
+        "cache-control": "max-age=20, public, stale-while-revalidate=30, stale-if-error=86400",
+        "date": "Thu, 02 Jul 2026 19:36:19 GMT",
+        "vary": "accept-encoding, Accept-Encoding",
+        "x-cache": "HIT, MISS"
+      },
+      "get_status_code": 200,
+      "get_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-07-01&hydrate=probablePitcher",
+      "head_headers_selected": {
+        "age": "24",
+        "cache-control": "max-age=20, public, stale-while-revalidate=30, stale-if-error=86400",
+        "date": "Thu, 02 Jul 2026 19:36:19 GMT",
+        "vary": "accept-encoding, Accept-Encoding",
+        "x-cache": "HIT, MISS"
+      },
+      "head_status_code": 200,
+      "json_parse_ok": true,
+      "label": "future_schedule",
+      "params": {
+        "date": "2026-07-01",
+        "hydrate": "probablePitcher",
+        "sportId": 1
+      },
+      "timestamp_like_fields_first_twenty": [
+        {
+          "path": "dates",
+          "value_type": "list"
+        },
+        {
+          "path": "dates[0].date",
+          "value": "2026-07-01"
+        },
+        {
+          "path": "dates[0].games[0].gameDate",
+          "value": "2026-07-01T16:35:00Z"
+        },
+        {
+          "path": "dates[0].games[0].officialDate",
+          "value": "2026-07-01"
+        },
+        {
+          "path": "dates[0].games[0].status.startTimeTBD",
+          "value": false
+        },
+        {
+          "path": "dates[0].games[1].gameDate",
+          "value": "2026-07-01T17:10:00Z"
+        },
+        {
+          "path": "dates[0].games[1].officialDate",
+          "value": "2026-07-01"
+        },
+        {
+          "path": "dates[0].games[1].status.startTimeTBD",
+          "value": false
+        }
+      ],
+      "top_level_keys": [
+        "copyright",
+        "dates",
+        "totalEvents",
+        "totalGames",
+        "totalGamesInProgress",
+        "totalItems"
+      ]
+    },
+    {
+      "conditional_request_attempted": false,
+      "date_count": 1,
+      "game_count_first_date": 14,
+      "get_headers_selected": {
+        "age": "20",
+        "cache-control": "max-age=20, public, stale-while-revalidate=30, stale-if-error=86400",
+        "date": "Thu, 02 Jul 2026 19:36:19 GMT",
+        "vary": "accept-encoding, Accept-Encoding",
+        "x-cache": "HIT, HIT"
+      },
+      "get_status_code": 200,
+      "get_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-07-01",
+      "head_headers_selected": {
+        "age": "20",
+        "cache-control": "max-age=20, public, stale-while-revalidate=30, stale-if-error=86400",
+        "date": "Thu, 02 Jul 2026 19:36:19 GMT",
+        "vary": "accept-encoding, Accept-Encoding",
+        "x-cache": "HIT, HIT"
+      },
+      "head_status_code": 200,
+      "json_parse_ok": true,
+      "label": "future_schedule_no_hydrate",
+      "params": {
+        "date": "2026-07-01",
+        "sportId": 1
+      },
+      "timestamp_like_fields_first_twenty": [
+        {
+          "path": "dates",
+          "value_type": "list"
+        },
+        {
+          "path": "dates[0].date",
+          "value": "2026-07-01"
+        },
+        {
+          "path": "dates[0].games[0].gameDate",
+          "value": "2026-07-01T16:35:00Z"
+        },
+        {
+          "path": "dates[0].games[0].officialDate",
+          "value": "2026-07-01"
+        },
+        {
+          "path": "dates[0].games[0].status.startTimeTBD",
+          "value": false
+        },
+        {
+          "path": "dates[0].games[1].gameDate",
+          "value": "2026-07-01T17:10:00Z"
+        },
+        {
+          "path": "dates[0].games[1].officialDate",
+          "value": "2026-07-01"
+        },
+        {
+          "path": "dates[0].games[1].status.startTimeTBD",
+          "value": false
+        }
+      ],
+      "top_level_keys": [
+        "copyright",
+        "dates",
+        "totalEvents",
+        "totalGames",
+        "totalGamesInProgress",
+        "totalItems"
+      ]
+    },
+    {
+      "conditional_request_attempted": false,
+      "date_count": 1,
+      "game_count_first_date": 14,
+      "get_headers_selected": {
+        "age": "0",
+        "cache-control": "max-age=20, public, stale-while-revalidate=30, stale-if-error=86400",
+        "date": "Thu, 02 Jul 2026 19:36:19 GMT",
+        "vary": "accept-encoding, Accept-Encoding",
+        "x-cache": "MISS, MISS"
+      },
+      "get_status_code": 200,
+      "get_url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-07-01&endDate=2026-07-01&hydrate=probablePitcher",
+      "head_headers_selected": {
+        "age": "0",
+        "cache-control": "max-age=20, public, stale-while-revalidate=30, stale-if-error=86400",
+        "date": "Thu, 02 Jul 2026 19:36:19 GMT",
+        "vary": "accept-encoding, Accept-Encoding",
+        "x-cache": "MISS, HIT"
+      },
+      "head_status_code": 200,
+      "json_parse_ok": true,
+      "label": "future_schedule_range",
+      "params": {
+        "endDate": "2026-07-01",
+        "hydrate": "probablePitcher",
+        "sportId": 1,
+        "startDate": "2026-07-01"
+      },
+      "timestamp_like_fields_first_twenty": [
+        {
+          "path": "dates",
+          "value_type": "list"
+        },
+        {
+          "path": "dates[0].date",
+          "value": "2026-07-01"
+        },
+        {
+          "path": "dates[0].games[0].gameDate",
+          "value": "2026-07-01T16:35:00Z"
+        },
+        {
+          "path": "dates[0].games[0].officialDate",
+          "value": "2026-07-01"
+        },
+        {
+          "path": "dates[0].games[0].status.startTimeTBD",
+          "value": false
+        },
+        {
+          "path": "dates[0].games[1].gameDate",
+          "value": "2026-07-01T17:10:00Z"
+        },
+        {
+          "path": "dates[0].games[1].officialDate",
+          "value": "2026-07-01"
+        },
+        {
+          "path": "dates[0].games[1].status.startTimeTBD",
+          "value": false
+        }
+      ],
+      "top_level_keys": [
+        "copyright",
+        "dates",
+        "totalEvents",
+        "totalGames",
+        "totalGamesInProgress",
+        "totalItems"
+      ]
+    }
+  ],
+  "endpoint": "https://statsapi.mlb.com/api/v1/schedule",
+  "run_started_utc": "2026-07-02T19:36:16.116714Z"
+}
