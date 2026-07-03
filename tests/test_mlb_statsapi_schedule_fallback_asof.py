@@ -303,3 +303,90 @@ def test_collector_observed_after_cutoff_fails_even_when_response_received_is_be
             "2026-06-30T16:00:00Z",
             raw_payload_root=tmp_path,
         )
+
+
+@pytest.mark.parametrize(
+    "configured_asof_cutoff_utc",
+    [None, "", "not-a-timestamp", "2026-06-30T16:00:00"],
+)
+def test_missing_empty_invalid_or_naive_configured_cutoff_fails(
+    tmp_path: Path,
+    configured_asof_cutoff_utc: object,
+) -> None:
+    with pytest.raises(
+        ScheduleFallbackAsofValidationError,
+        match="configured_asof_cutoff_utc",
+    ):
+        build_schedule_fallback_canonical_identity(
+            raw_game(),
+            valid_manifest(tmp_path),
+            configured_asof_cutoff_utc,
+            raw_payload_root=tmp_path,
+        )
+
+
+@pytest.mark.parametrize(
+    "collector_observed_asof_utc",
+    [None, "", "not-a-timestamp", "2026-06-30T15:00:00"],
+)
+def test_missing_empty_invalid_or_naive_collector_timestamp_fails(
+    tmp_path: Path,
+    collector_observed_asof_utc: object,
+) -> None:
+    manifest = valid_manifest(tmp_path)
+    manifest["collector_observed_asof_utc"] = collector_observed_asof_utc
+    with pytest.raises(
+        ScheduleFallbackAsofValidationError,
+        match="collector_observed_asof_utc",
+    ):
+        build_schedule_fallback_canonical_identity(
+            raw_game(),
+            manifest,
+            "2026-06-30T16:00:00Z",
+            raw_payload_root=tmp_path,
+        )
+
+
+def test_game_strictly_before_cutoff_fails(tmp_path: Path) -> None:
+    game = raw_game(game_date_utc="2026-06-30T15:30:00Z")
+    game["officialDate"] = "2026-06-30"
+    with pytest.raises(
+        ScheduleFallbackAsofValidationError,
+        match="game_date_utc must be strictly after",
+    ):
+        build_schedule_fallback_canonical_identity(
+            game,
+            valid_manifest(tmp_path),
+            "2026-06-30T16:00:00Z",
+            raw_payload_root=tmp_path,
+        )
+
+
+def test_source_issued_proven_true_with_null_fails(tmp_path: Path) -> None:
+    manifest = valid_manifest(tmp_path)
+    manifest["source_issued_asof_proven"] = True
+    with pytest.raises(
+        ScheduleFallbackAsofValidationError,
+        match="cannot be true",
+    ):
+        build_schedule_fallback_canonical_identity(
+            raw_game(),
+            manifest,
+            "2026-06-30T16:00:00Z",
+            raw_payload_root=tmp_path,
+        )
+
+
+def test_source_issued_timestamp_with_unproven_false_fails(tmp_path: Path) -> None:
+    manifest = valid_manifest(tmp_path)
+    manifest["source_issued_asof_utc"] = "2026-06-30T14:00:00Z"
+    with pytest.raises(
+        ScheduleFallbackAsofValidationError,
+        match="must be null",
+    ):
+        build_schedule_fallback_canonical_identity(
+            raw_game(),
+            manifest,
+            "2026-06-30T16:00:00Z",
+            raw_payload_root=tmp_path,
+        )
