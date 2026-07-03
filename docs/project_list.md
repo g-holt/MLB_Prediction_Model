@@ -45,6 +45,8 @@ Completed items should be shown with strikethrough instead of being deleted, so 
 - Identify leakage risk.
 - ~~Define required proof artifact for each source.~~
 - ~~Mark initial source status as unproven, proven-safe, proven-unsafe, fallback, final-truth-only, or excluded.~~
+- ~~Accept the MLB Stats API schedule endpoint as a limited-use `FALLBACK` for Game schedule and Canonical game IDs under the forward-capture or deterministic-replay cutoff contract.~~
+- ~~Record that this fallback is not `PROVEN_SAFE` and excludes scores, probable pitchers, lineups, packet schema, and all other unaudited model inputs.~~
 
 ### 0D — Candidate source categories
 
