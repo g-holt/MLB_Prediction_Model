@@ -1,6 +1,6 @@
 # MLB Stats API Schedule Limited-Use Fallback As-Of Contract
 
-Status: draft contract; not source acceptance.
+Status: accepted for limited-use `FALLBACK` classification; not `PROVEN_SAFE`.
 
 ## Purpose
 
@@ -72,7 +72,7 @@ The record must block or fail when:
 
 ## Required acceptance tests
 
-Before this fallback can receive source-specific acceptance:
+Source-specific acceptance requires all of the following:
 
 1. A pre-cutoff stored snapshot must pass.
 2. A snapshot received after the cutoff must fail.
@@ -88,7 +88,7 @@ Before this fallback can receive source-specific acceptance:
 
 ## Status effect
 
-- Game schedule and canonical game IDs remain UNPROVEN while this contract is draft-only.
-- Passing implementation tests and source-specific review may support a FALLBACK classification.
-- A collector-observed timestamp alone must never justify PROVEN_SAFE status.
-- This draft does not accept packet schema, probable pitchers, lineups, scores, or other model inputs.
+- Game schedule and canonical game IDs are accepted as `FALLBACK` only within the limited scope and cutoff rules in this contract.
+- The endpoint is not `PROVEN_SAFE`; no durable source-issued representation timestamp has been proven.
+- Downstream crosswalks remain required before multi-source joins, but they do not expand or invalidate the accepted MLB-only canonical identity fallback.
+- This acceptance does not include packet schema, probable pitchers, lineups, scores, or other model inputs.
