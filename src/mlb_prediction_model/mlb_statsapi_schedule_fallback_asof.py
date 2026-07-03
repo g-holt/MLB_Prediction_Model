@@ -88,10 +88,18 @@ def _validate_fallback_manifest(
         )
 
     cutoff = _parse_aware_datetime(configured_asof_cutoff_utc, "configured_asof_cutoff_utc")
+    response_received = _parse_aware_datetime(
+        manifest.get("response_received_at_utc"),
+        "response_received_at_utc",
+    )
     collector_observed = _parse_aware_datetime(
         manifest.get("collector_observed_asof_utc"),
         "collector_observed_asof_utc",
     )
+    if response_received > cutoff:
+        raise ScheduleFallbackAsofValidationError(
+            "response_received_at_utc must be at or before configured_asof_cutoff_utc"
+        )
     if collector_observed > cutoff:
         raise ScheduleFallbackAsofValidationError(
             "collector_observed_asof_utc must be at or before configured_asof_cutoff_utc"

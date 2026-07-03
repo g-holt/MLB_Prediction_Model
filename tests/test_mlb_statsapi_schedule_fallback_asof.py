@@ -90,7 +90,7 @@ def test_pre_cutoff_stored_snapshot_passes_with_exact_identity_allowlist(
 def test_snapshot_received_after_cutoff_fails(tmp_path: Path) -> None:
     with pytest.raises(
         ScheduleFallbackAsofValidationError,
-        match="collector_observed_asof_utc must be at or before",
+        match="response_received_at_utc must be at or before",
     ):
         build_schedule_fallback_canonical_identity(
             raw_game(),
@@ -220,7 +220,7 @@ def test_postgame_historical_retrieval_cannot_be_backdated(tmp_path: Path) -> No
     manifest["response_received_at_utc"] = "2026-07-02T12:00:00Z"
     with pytest.raises(
         ScheduleFallbackAsofValidationError,
-        match="collector_observed_asof_utc must be at or before",
+        match="response_received_at_utc must be at or before",
     ):
         build_schedule_fallback_canonical_identity(
             raw_game(game_date_utc="2024-04-01T17:10:00Z"),
@@ -245,3 +245,61 @@ def test_replay_is_deterministic(tmp_path: Path) -> None:
         raw_payload_root=tmp_path,
     )
     assert first == second
+
+
+def test_response_received_after_cutoff_fails_even_when_collector_observed_is_before(
+    tmp_path: Path,
+) -> None:
+    manifest = valid_manifest(tmp_path)
+    manifest["response_received_at_utc"] = "2026-06-30T17:00:00Z"
+    manifest["collector_observed_asof_utc"] = "2026-06-30T15:00:00Z"
+    with pytest.raises(
+        ScheduleFallbackAsofValidationError,
+        match="response_received_at_utc must be at or before",
+    ):
+        build_schedule_fallback_canonical_identity(
+            raw_game(),
+            manifest,
+            "2026-06-30T16:00:00Z",
+            raw_payload_root=tmp_path,
+        )
+
+
+@pytest.mark.parametrize(
+    "response_received_at_utc",
+    [None, "not-a-timestamp", "2026-06-30T15:00:00"],
+)
+def test_missing_invalid_or_naive_response_received_timestamp_fails(
+    tmp_path: Path,
+    response_received_at_utc: object,
+) -> None:
+    manifest = valid_manifest(tmp_path)
+    manifest["response_received_at_utc"] = response_received_at_utc
+    with pytest.raises(
+        ScheduleFallbackAsofValidationError,
+        match="response_received_at_utc",
+    ):
+        build_schedule_fallback_canonical_identity(
+            raw_game(),
+            manifest,
+            "2026-06-30T16:00:00Z",
+            raw_payload_root=tmp_path,
+        )
+
+
+def test_collector_observed_after_cutoff_fails_even_when_response_received_is_before(
+    tmp_path: Path,
+) -> None:
+    manifest = valid_manifest(tmp_path)
+    manifest["response_received_at_utc"] = "2026-06-30T15:00:00Z"
+    manifest["collector_observed_asof_utc"] = "2026-06-30T17:00:00Z"
+    with pytest.raises(
+        ScheduleFallbackAsofValidationError,
+        match="collector_observed_asof_utc must be at or before",
+    ):
+        build_schedule_fallback_canonical_identity(
+            raw_game(),
+            manifest,
+            "2026-06-30T16:00:00Z",
+            raw_payload_root=tmp_path,
+        )
