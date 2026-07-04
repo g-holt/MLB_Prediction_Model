@@ -7,7 +7,9 @@ import re
 import sys
 from pathlib import Path
 
-REQUIRED_FIRST_LINE = '$RepoPath=Resolve-Path (Join-Path $HOME "Desktop\\MLB_Prediction_Model")'
+REQUIRED_FIRST_LINE = (
+    '$RepoPath=Resolve-Path (Join-Path $HOME "Desktop\\MLB_Prediction_Model")'
+)
 REQUIRED_SECOND_LINE = "Set-Location $RepoPath"
 
 _NATIVE_COMMAND_PATTERN = re.compile(
@@ -41,15 +43,23 @@ def validate_powershell_command_block(command_text: str) -> tuple[str, ...]:
     lines = command_text.splitlines()
 
     if len(lines) < 2:
-        errors.append("command block must contain at least the two mandatory repository-entry lines")
+        errors.append(
+            "command block must contain at least the two mandatory repository-entry lines"
+        )
     else:
         if lines[0] != REQUIRED_FIRST_LINE:
-            errors.append("first line does not exactly match the mandatory RepoPath assignment")
+            errors.append(
+                "first line does not exactly match the mandatory RepoPath assignment"
+            )
         if lines[1] != REQUIRED_SECOND_LINE:
-            errors.append("second line does not exactly match the mandatory Set-Location command")
+            errors.append(
+                "second line does not exactly match the mandatory Set-Location command"
+            )
 
     if "`" in command_text:
-        errors.append("PowerShell backtick characters are prohibited anywhere in delivered blocks")
+        errors.append(
+            "PowerShell backtick characters are prohibited anywhere in delivered blocks"
+        )
     if "$RepoRoot" in command_text:
         errors.append("RepoRoot is prohibited; use the mandatory RepoPath variable")
     if any(token in command_text for token in ('@"', "@'", '"@', "'@")):
@@ -57,7 +67,9 @@ def validate_powershell_command_block(command_text: str) -> tuple[str, ...]:
     if _CD_PATTERN.search(command_text):
         errors.append("cd is prohibited; use the mandatory Set-Location command")
     if _EXIT_PATTERN.search(command_text):
-        errors.append("exit commands are prohibited unless the user explicitly requests one")
+        errors.append(
+            "exit commands are prohibited unless the user explicitly requests one"
+        )
     if _PLAIN_GIT_PULL_PATTERN.search(command_text):
         errors.append("git pull must include --ff-only")
     if "$HadFailure=$false" not in command_text:
@@ -109,7 +121,9 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
 
-    command_text = args.path.read_text(encoding="utf-8") if args.path else sys.stdin.read()
+    command_text = (
+        args.path.read_text(encoding="utf-8") if args.path else sys.stdin.read()
+    )
     errors = validate_powershell_command_block(command_text)
     if errors:
         for error in errors:
