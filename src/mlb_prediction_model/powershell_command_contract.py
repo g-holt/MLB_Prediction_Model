@@ -16,10 +16,10 @@ _NATIVE_COMMAND_PATTERN = re.compile(
 )
 _PLAIN_GIT_PULL_PATTERN = re.compile(
     r"(?:^|[;{])\s*git\s+pull(?!\s+--ff-only(?:\s|;|$))",
-    re.IGNORECASE,
+    re.IGNORECASE | re.MULTILINE,
 )
-_CD_PATTERN = re.compile(r"(?:^|[;{])\s*cd(?:\s|;|$)", re.IGNORECASE)
-_EXIT_PATTERN = re.compile(r"(?:^|[;{])\s*exit(?:\s|;|$)", re.IGNORECASE)
+_CD_PATTERN = re.compile(r"(?:^|[;{])\s*cd(?:\s|;|$)", re.IGNORECASE | re.MULTILINE)
+_EXIT_PATTERN = re.compile(r"(?:^|[;{])\s*exit(?:\s|;|$)", re.IGNORECASE | re.MULTILINE)
 
 
 def _previous_nonempty_line(lines: list[str], index: int) -> str:
