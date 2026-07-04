@@ -98,6 +98,14 @@ def test_native_assignment_before_last_exit_code_passes() -> None:
     assert validate_powershell_command_block(command) == ()
 
 
+def test_guarded_native_command_with_same_line_check_passes() -> None:
+    command = VALID_BLOCK.replace(
+        'git status\nif($LASTEXITCODE -ne 0){Write-Host "GIT_STATUS_FAILED"; $HadFailure=$true}',
+        'if(!$HadFailure){git status; if($LASTEXITCODE -ne 0){Write-Host "GIT_STATUS_FAILED"; $HadFailure=$true}}',
+    )
+    assert validate_powershell_command_block(command) == ()
+
+
 def test_multiline_construct_opening_fails() -> None:
     command = VALID_BLOCK.replace("git status", "$Values=@(\ngit status")
     errors = validate_powershell_command_block(command)
