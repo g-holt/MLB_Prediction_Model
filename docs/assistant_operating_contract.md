@@ -37,6 +37,21 @@ For code and workflow commands:
 - prove facts from repo, docs, logs, or artifacts;
 - keep statuses UNPROVEN until acceptance gates pass.
 
+### Mandatory repository entry
+
+Every PowerShell command block that operates on this repository must begin with exactly these two lines:
+
+    $RepoPath=Resolve-Path (Join-Path $HOME "Desktop\MLB_Prediction_Model")
+    Set-Location $RepoPath
+
+Do not replace RepoPath with another variable name. Do not use cd. Do not prepend cls, prompt text, comments, or any other characters to the first line.
+
+Every repository update must use git pull --ff-only. Plain git pull is not permitted.
+
+LASTEXITCODE may only be checked immediately after a native executable invocation. PowerShell cmdlets and .NET operations must use try/catch or direct state checks instead of relying on LASTEXITCODE.
+
+Before presenting a repository command block, verify literally that its first two lines match the mandatory repository entry above.
+
 ## Command delivery self-check
 
 Before presenting a PowerShell command block, verify that it contains no here-string tokens, no line-continuation backticks, no PowerShell multiline constructs, and no exit command unless explicitly requested.
