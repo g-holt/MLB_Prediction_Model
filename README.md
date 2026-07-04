@@ -2,7 +2,7 @@
 
 This repository is for building a reproducible, score-blind MLB data collection, prediction, backtesting, and evaluation project.
 
-The project is intentionally starting with planning, verification rules, and source audits before implementation code. No collector, model, or runner should be added until the relevant interfaces and source contracts have been proven from actual artifacts.
+The project uses verification-first, dependency-ordered development. A source or component is not accepted for downstream use until its interfaces, source behavior, leakage boundaries, and acceptance gates are proven from actual artifacts.
 
 ## Project goal
 
@@ -20,11 +20,17 @@ The packet should eventually support:
 
 ## Current project order
 
-1. Data collection and storage.
-2. Pregame-safe packet building.
-3. Prediction model development.
-4. Backtesting and model comparison.
-5. Betting and wallet strategy.
+1. Governance, packaging, Git workflow, and repository structure.
+2. Data architecture, time semantics, score-blind storage, and reproducibility.
+3. Date handling, schedule, and canonical game identity.
+4. Source-specific audits and raw collection.
+5. Pregame-safe feature and packet building.
+6. Prediction model development.
+7. Backtesting and model comparison.
+8. Operationalization.
+9. Betting and wallet strategy.
+
+Each phase ends with an acceptance gate and roadmap review. If a new prerequisite appears, it must be inserted at the earliest correct position before downstream work continues.
 
 Betting and wallet logic must come last. Prediction quality and data integrity must be proven first.
 
@@ -101,12 +107,19 @@ Run outputs should live in organized run folders and manifests, not in copied sc
 
 ## Current status
 
-Planning only.
+Phase 0 foundation work is active.
 
-No source contracts, schemas, command-line interfaces, collectors, feature builders, model logic, or wallet logic are locked yet.
+The MLB Stats API schedule endpoint and canonical game IDs are accepted only as a limited-use `FALLBACK` for forward-captured pre-cutoff snapshots or deterministic replay of those snapshots. This accepted vertical slice includes score-blind filtering, snapshot manifests, payload hashing, canonical identity reconstruction, fallback validation, and tests.
+
+The schedule endpoint is not `PROVEN_SAFE`. Its accepted scope excludes probable pitchers, lineups, scores, packet schema, and every other unaudited model input.
+
+Packaging, Git workflow, repository structure, and the broader data architecture remain open and must be completed before another production source collector is implemented.
+
+No feature packet, prediction model, backtest promotion workflow, operational runner, or wallet contract is accepted yet.
 
 See:
 
 - `docs/verification_contract.md`
+- `docs/assistant_operating_contract.md`
 - `docs/project_list.md`
 - `docs/source_capability_matrix.md`
