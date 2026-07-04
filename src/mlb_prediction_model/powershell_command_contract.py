@@ -11,7 +11,7 @@ REQUIRED_FIRST_LINE = '$RepoPath=Resolve-Path (Join-Path $HOME "Desktop\\MLB_Pre
 REQUIRED_SECOND_LINE = "Set-Location $RepoPath"
 
 _NATIVE_COMMAND_PATTERN = re.compile(
-    r"(?:^|[=;(])\s*(?:git|gh|uv|python|python3|py|pwsh|powershell|cmd|dotnet)\b",
+    r"(?:^|[=;({])\s*(?:git|gh|uv|python|python3|py|pwsh|powershell|cmd|dotnet)\b",
     re.IGNORECASE,
 )
 _PLAIN_GIT_PULL_PATTERN = re.compile(
