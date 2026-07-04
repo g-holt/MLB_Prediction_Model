@@ -49,12 +49,14 @@ Existing work completed out of order does not waive an unfinished foundation gat
 For code and workflow commands:
 
 - no PowerShell multiline constructs;
-- no line-continuation backticks;
+- no PowerShell backtick characters anywhere in the delivered block;
 - no here-strings;
 - no exit commands unless explicitly requested;
 - banner only inside the code block;
 - prove facts from repo, docs, logs, or artifacts;
 - keep statuses UNPROVEN until acceptance gates pass.
+
+The backtick prohibition includes line continuation, escaping, and Markdown-style backticks copied into PowerShell string literals.
 
 ### Mandatory repository entry
 
@@ -73,8 +75,16 @@ Before presenting a repository command block, verify literally that its first tw
 
 ## Command delivery self-check
 
-Before presenting a PowerShell command block, verify that it contains no here-string tokens, no line-continuation backticks, no PowerShell multiline constructs, and no exit command unless explicitly requested.
+Before presenting a PowerShell command block, validate the exact final text with:
+
+    uv run python -m mlb_prediction_model.powershell_command_contract PATH_TO_UTF8_COMMAND_FILE
+
+Do not present the block unless the validator returns `PASS_POWERSHELL_COMMAND_CONTRACT` with exit code zero.
+
+The validator must enforce the exact repository entry, the RepoPath variable, the absence of cd, all PowerShell backtick characters, here-strings, exit commands, plain git pull, PowerShell multiline openings, stale LASTEXITCODE checks, and the required HadFailure initialization.
+
+If the validator is unavailable, failing, or does not cover a newly discovered command-delivery failure, do not present another workflow block. Patch the validator and its tests first.
 
 When a generated script body is required, write it through a repository file, a compact Python command, or another contract-compliant method instead of embedding a PowerShell here-string.
 
-If a proposed command violates these constraints, do not present it; rewrite it first.
+If a proposed command violates these constraints, do not present it; rewrite and revalidate it first.
