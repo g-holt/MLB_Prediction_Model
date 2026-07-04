@@ -33,7 +33,7 @@ def test_leading_clear_command_fails() -> None:
 
 def test_markdown_backticks_in_string_fail() -> None:
     command = VALID_BLOCK.replace(
-        'git status',
+        "git status",
         'Write-Host "limited-use `FALLBACK`"\ngit status',
     )
     errors = validate_powershell_command_block(command)
