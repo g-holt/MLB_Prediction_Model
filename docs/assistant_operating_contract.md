@@ -25,6 +25,25 @@ If the required file cannot be checked, say so and do not proceed as if it was v
 
 If this contract is violated, stop the workflow, acknowledge the exact violated rule, and patch the repo contract before continuing.
 
+## Linear roadmap and phase-end review
+
+Treat docs/project_list.md as a dependency-ordered roadmap, not merely a topic list.
+
+Do not begin a later phase until the preceding phase acceptance gate and roadmap review are complete.
+
+At the end of every phase, before recommending or beginning the next phase:
+
+1. Read the active project list and the completed phase artifacts, code, tests, logs, contracts, and source matrix entries.
+2. Verify that every later task has the required foundation and accepted interfaces.
+3. Add, split, remove, or reorder future tasks when the evidence reveals a missing dependency, risk, or contract.
+4. Insert each new task at its earliest prerequisite position rather than appending it to the current work.
+5. Preserve moved completed tasks with strikethrough.
+6. Record and merge the roadmap review before downstream work continues.
+
+If a missing prerequisite is discovered mid-phase, stop downstream implementation and place the prerequisite in the correct earlier position before continuing.
+
+Existing work completed out of order does not waive an unfinished foundation gate. Preserve the work, classify its accepted scope accurately, and reconcile it after the prerequisite architecture is accepted.
+
 ## Command block constraints
 
 For code and workflow commands:
