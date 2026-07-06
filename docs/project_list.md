@@ -75,18 +75,18 @@ The current stop point is Phase 0. Complete Phase 0 and Phase 1 before implement
 
 ### 0D — Packaging, configuration, and repository structure
 
-- Formally decide whether the project is an installable application package, a reusable library package, or both.
-- Formally accept or revise the current `pyproject.toml`, `uv_build`, and `src` layout.
-- Define package boundaries for source adapters, domain models, validation, storage, feature engineering, packet building, prediction, grading, and wallet logic.
-- Define which files are package code, repository tooling, tests, documentation, configuration, and runtime artifacts.
-- Design the clean repository directory structure before adding another collector.
-- Define the runtime artifact root outside importable package code.
-- Define configuration precedence for defaults, checked-in configuration, environment variables, and command-line overrides.
-- Define secrets handling and explicitly exclude API keys, tokens, browser states, and credentials from Git.
-- Define naming and versioning rules for schemas, manifests, raw snapshots, derived datasets, packets, predictions, truth, and grading outputs.
-- Decide whether a packaged CLI entry point is created now or deferred until stable interfaces exist.
+- ~~Formally decide whether the project is an installable application package, a reusable library package, or both.~~
+- ~~Formally accept or revise the current `pyproject.toml`, `uv_build`, and `src` layout.~~
+- ~~Define package boundaries for source adapters, domain models, validation, storage, feature engineering, packet building, prediction, grading, and wallet logic.~~
+- ~~Define which files are package code, repository tooling, tests, documentation, configuration, and runtime artifacts.~~
+- ~~Design the clean repository directory structure before adding another collector.~~
+- ~~Define the runtime artifact root outside importable package code.~~
+- ~~Define configuration precedence for defaults, checked-in configuration, environment variables, and command-line overrides.~~
+- ~~Define secrets handling and explicitly exclude API keys, tokens, browser states, and credentials from Git.~~
+- ~~Define naming and versioning rules for schemas, manifests, raw snapshots, derived datasets, packets, predictions, truth, and grading outputs.~~
+- ~~Decide whether a packaged CLI entry point is created now or deferred until stable interfaces exist.~~
 - Reconcile the existing schedule modules and tests with the accepted package boundaries without broadening their accepted source scope.
-- Update the README so its status matches the accepted schedule fallback and current roadmap.
+- ~~Update the README so its status matches the accepted schedule fallback and current roadmap.~~
 
 ### 0E — Git and GitHub workflow
 
