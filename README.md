@@ -105,6 +105,22 @@ Instead, code history should live in Git commits and pull requests.
 
 Run outputs should live in organized run folders and manifests, not in copied script folders.
 
+## Packaging and repository boundaries
+
+The project uses an installable Python application package with reusable internal library modules. It does not yet promise a stable public API or packaged command-line interface.
+
+The accepted packaging foundation is `uv_build` with the `src/mlb_prediction_model` layout. A verified build produced one wheel containing only the import package and distribution metadata, plus one source distribution containing only the README, `pyproject.toml`, package source, and generated metadata.
+
+Importable code belongs under `src/mlb_prediction_model/`. Tests belong under `tests/`, project contracts and audit evidence under `docs/`, checked-in non-secret configuration under `config/`, and non-package repository tooling under `tools/`.
+
+`runs/` is the single runtime-artifact root. Its internal raw, derived, truth, grading, audit, manifest, run-ID, and date-partition structure remains a Phase 1 decision.
+
+Configuration precedence is package defaults, checked-in non-secret configuration, environment variables, then explicit command-line overrides. Secrets and browser or account state must never be committed.
+
+A packaged CLI is deferred until stable configuration and application interfaces exist. The existing schedule modules remain in place pending Phase 1 architectural reconciliation.
+
+See `docs/phase_0d_packaging_repository_structure_contract.md`.
+
 ## Current status
 
 Phase 0 foundation work is active.
@@ -113,7 +129,7 @@ The MLB Stats API schedule endpoint and canonical game IDs are accepted only as 
 
 The schedule endpoint is not `PROVEN_SAFE`. Its accepted scope excludes probable pitchers, lineups, scores, packet schema, and every other unaudited model input.
 
-Packaging, Git workflow, repository structure, and the broader data architecture remain open and must be completed before another production source collector is implemented.
+The Phase 0D packaging and repository-structure decision is accepted. Schedule-module reconciliation, Git workflow, source-audit enforcement, and the broader data architecture remain open and must be completed before another production source collector is implemented.
 
 No feature packet, prediction model, backtest promotion workflow, operational runner, or wallet contract is accepted yet.
 
@@ -123,3 +139,4 @@ See:
 - `docs/assistant_operating_contract.md`
 - `docs/project_list.md`
 - `docs/source_capability_matrix.md`
+- `docs/phase_0d_packaging_repository_structure_contract.md`
