@@ -85,7 +85,7 @@ The current stop point is Phase 0. Complete Phase 0 and Phase 1 before implement
 - ~~Define secrets handling and explicitly exclude API keys, tokens, browser states, and credentials from Git.~~
 - ~~Define naming and versioning rules for schemas, manifests, raw snapshots, derived datasets, packets, predictions, truth, and grading outputs.~~
 - ~~Decide whether a packaged CLI entry point is created now or deferred until stable interfaces exist.~~
-- Reconcile the existing schedule modules and tests with the accepted package boundaries without broadening their accepted source scope.
+- ~~Record the existing schedule modules and tests as temporary compatibility placement, preserve the limited-use FALLBACK scope, and defer architectural reconciliation to the Phase 1 acceptance gate.~~
 - ~~Update the README so its status matches the accepted schedule fallback and current roadmap.~~
 
 ### 0E — Git and GitHub workflow
