@@ -100,16 +100,20 @@ The current stop point is Phase 0. Complete Phase 0 and Phase 1 before implement
 - ~~Verify committed documentation files from repository contents.~~
 - ~~Clone the repository locally.~~
 - ~~Verify the local clone tracks `origin/main`.~~
-- Decide and document the branch strategy.
-- Decide whether direct commits to `main` are prohibited.
-- Decide whether every code, contract, roadmap, and documentation change requires a pull request.
-- Decide the merge method: squash, merge commit, or rebase.
-- Define branch naming and branch cleanup rules.
-- Define required pre-merge gates for tests, lint, formatting, diff checks, and contract-specific validation.
-- Define whether documentation-only changes may use reduced gates.
-- Decide whether branch protection and required status checks will be enabled.
-- Define one isolated change set per branch and pull request.
-- Define post-merge verification and local cleanup requirements.
+- ~~Decide and document the branch strategy.~~
+- ~~Decide whether direct commits to `main` are prohibited.~~
+- ~~Decide whether every code, contract, roadmap, and documentation change requires a pull request.~~
+- ~~Decide the merge method: squash, merge commit, or rebase.~~
+- ~~Define branch naming and branch cleanup rules.~~
+- ~~Define required pre-merge gates for tests, lint, formatting, diff checks, and contract-specific validation.~~
+- ~~Define whether documentation-only changes may use reduced gates.~~
+- ~~Decide whether branch protection and required status checks will be enabled.~~
+- Implement and prove a GitHub Actions pull-request job named `quality-gate`.
+- Configure repository merge settings to allow squash merge only and automatically delete merged head branches.
+- Create an active `main` ruleset requiring pull requests, strict `quality-gate`, conversation resolution, and linear history while blocking force pushes and deletion.
+- Verify the enforced workflow with blocked direct-update and passing pull-request controls, then record the accepted settings.
+- ~~Define one isolated change set per branch and pull request.~~
+- ~~Define post-merge verification and local cleanup requirements.~~
 
 ### 0F — Source capability audit framework
 

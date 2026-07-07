@@ -17,6 +17,7 @@ Before answering any request involving List, next step, current phase, status, c
 If the answer depends on the project roadmap, read docs/project_list.md.
 If the answer depends on rules, command style, verification discipline, or reserved terms, read docs/verification_contract.md and this file.
 If the answer depends on source status, read docs/source_capability_matrix.md.
+If the answer depends on branch strategy, pull-request requirements, merge policy, pre-merge gates, repository rules, or branch cleanup, read docs/phase_0e_git_github_workflow_contract.md.
 If the answer depends on a merged contract, read the relevant file under docs/source_contracts/.
 
 Do not substitute memory, summaries, or assumptions for those files.
